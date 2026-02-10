@@ -50,9 +50,18 @@ const letter = {
 
 const Model = ({ imageDetails, onShowcaseReached }) => {
   const isMobile = window.innerWidth <= 768;
-  const { scrollYProgress } = useViewportScroll();
-  
-  const detailedOpacity = useTransform(scrollYProgress, [0.6, 0.8], [1, isMobile ? 1 : 0]);
+  const { scrollY } = useViewportScroll();
+
+  const viewH = window.innerHeight;
+  const detailedOpacity = useTransform(
+    scrollY,
+    isMobile
+      ? [0, viewH * 0.8, viewH * 1.1]
+      : [viewH * 0.3, viewH * 0.6, viewH * 1.0, viewH * 1.3],
+    isMobile
+      ? [1, 1, 0]
+      : [0, 1, 1, 0]
+  );
 
   const [canScroll, setCanScroll] = useState(false);
 
@@ -117,7 +126,7 @@ const Model = ({ imageDetails, onShowcaseReached }) => {
                 initial={{ 
                   width: imageDetails.width, 
                   height: imageDetails.height,
-                  y: isMobile ? 95 : "-50%" 
+                  y: isMobile ? 50 : "-50%" 
                 }}
                 animate={{
                   y: 0,
@@ -155,7 +164,7 @@ const Model = ({ imageDetails, onShowcaseReached }) => {
 
       <motion.div
         className="detailed-information"
-        style={{ opacity: isMobile ? 1 : detailedOpacity }}
+        style={{ opacity: detailedOpacity }}
       >
         <div className="container">
           <div className="row">
@@ -194,10 +203,7 @@ const Model = ({ imageDetails, onShowcaseReached }) => {
         <CardFan images={portfolioImages} canAnimate={canScroll} />
       </div>
 
-      <ShowcaseSection 
-        canAnimate={canScroll} 
-        onSunFinished={onShowcaseReached} 
-      />
+      <ShowcaseSection canAnimate={canScroll} onSunFinished={onShowcaseReached} />
 
       <ContactArrow canAnimate={canScroll} />
     </motion.div>
