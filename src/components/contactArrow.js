@@ -27,15 +27,17 @@ const ContactArrow = ({ canAnimate }) => {
       <div ref={sentinelRef} style={{ height: 1, width: "100%" }} />
 
       <motion.div
-        className="contact-arrow-wrapper"
+        className="contact-arrow-fixed"
         initial={{ opacity: 0, y: 40 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
         transition={{ duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9], delay: 0.8 }}
       >
-        <img
-          src={require("../images/arrowDrawned.png")}
-          alt="arrow to contact"
-        />
+        <div className="contact-arrow-track">
+          <img
+            src={require("../images/arrowDrawned.png")}
+            alt="arrow to contact"
+          />
+        </div>
       </motion.div>
 
       <motion.div
@@ -43,11 +45,11 @@ const ContactArrow = ({ canAnimate }) => {
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9], delay: 1.2 }}
-        >
+      >
         <a href="https://linkedin.com/in/juliobandeira" target="_blank" rel="noopener noreferrer">
-            Developed by Julio Bandeira
+          Developed by Julio Bandeira
         </a>
-        </motion.div>
+      </motion.div>
     </>
   );
 };

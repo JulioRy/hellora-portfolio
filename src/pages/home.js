@@ -5,8 +5,10 @@ import ProgressiveImage from "react-progressive-image";
 
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
-const Home = ({ imageDetails, image }) => (
-  <>
+const Home = ({ imageDetails, image }) => {
+  const isMobile = window.innerWidth <= 768;
+
+  return (
     <main>
       <div className="container">
         <div className="row center">
@@ -17,6 +19,7 @@ const Home = ({ imageDetails, image }) => (
               style={{
                 width: imageDetails.width,
                 height: imageDetails.height,
+                marginTop: isMobile ? "-40px" : "0",
               }}
             >
               <div className="frame">
@@ -31,6 +34,12 @@ const Home = ({ imageDetails, image }) => (
                         transition={transition}
                         src={src}
                         alt="Hellora"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: isMobile ? "center 20%" : "center center",
+                        }}
                       />
                     )}
                   </ProgressiveImage>
@@ -52,7 +61,7 @@ const Home = ({ imageDetails, image }) => (
         </div>
       </div>
     </main>
-  </>
-);
+  );
+};
 
 export default Home;
