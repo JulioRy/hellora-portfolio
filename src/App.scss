@@ -458,4 +458,296 @@ main {
   }
 }
 
+// ========================
+// SHOWCASE SECTION
+// ========================
+
+$main: #d4d4d0;
+$black: #1e1f13;
+
+.showcase-section {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+
+  // Sun positioned at bottom-center
+  .showcase-bg-logo {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .showcase-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .showcase-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 40vh;
+  }
+
+  // ---- LEFT: Text ----
+  .showcase-text {
+    flex: 0 0 38%;
+    max-width: 480px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 28px 0;
+      font-family: "Maragsa", "Anton", sans-serif;
+    }
+
+    p {
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 400;
+      margin: 0 0 44px 0;
+      color: $black;
+    }
+  }
+
+  // ---- RIGHT: Two media cards ----
+  .showcase-media {
+    flex: 0 0 55%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (min-width: 1408px) {
+      gap: 40px;
+    }
+  }
+
+  // =============================================
+  // CARD SIZING
+  // =============================================
+
+  .showcase-media-main {
+    width: 340px;
+    height: 75%;
+    align-self: flex-start;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+
+    video, img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 1408px) {
+      width: 400px;
+      height: 78%;
+    }
+  }
+
+  .showcase-media-secondary {
+    width: 280px;
+    height: 60%;
+    align-self: flex-start;
+    margin-top: -40%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+
+    video, img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 1408px) {
+      width: 340px;
+      height: 68%;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .showcase-text h2 {
+      font-size: 30px;
+    }
+
+    .showcase-media-main {
+      width: 280px;
+    }
+
+    .showcase-media-secondary {
+      width: 240px;
+    }
+  }
+}
+
+// ========================
+// WHATSAPP BUTTON
+// ========================
+.whatsapp-btn {
+  background-color: $main;
+  border: 1px solid $black;
+  padding: 0;
+  position: relative;
+  width: 11em;
+  height: 3em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none !important;
+  overflow: hidden;
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    color: $black;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.2em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1.1em;
+    width: 1.1em;
+    fill: #fff;
+  }
+
+  &:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+
+    p {
+      left: 40%;
+      color: #fff;
+    }
+
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+// ========================
+// CREDIT TEXT (page bottom)
+// ========================
+.credit-text {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+
+  a {
+    color: $black;
+    text-decoration: none;
+    font-family: "Helvetica Neue", sans-serif;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.back-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent; 
+  border: 1px solid #1e1f13; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+  outline: none;
+  padding: 0;
+
+  .back-svgIcon {
+    width: 14px;
+    transition: all 0.3s ease;
+    transform: rotate(-90deg);
+    
+    path {
+      fill: #1e1f13;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "VOLTAR";
+    color: #d4d4d0;
+    font-size: 0px;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+
+  &:hover {
+    width: 130px;
+    border-radius: 50px;
+    background-color: #1e1f13;
+
+    .back-svgIcon {
+      transform: translateY(-40px) rotate(-90deg);
+      opacity: 0;
+    }
+
+    &::before {
+      font-size: 13px;
+      opacity: 1;
+    }
+  }
+}
+
 @import './responsive';

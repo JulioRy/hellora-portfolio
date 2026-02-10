@@ -23,9 +23,7 @@ const ContactArrow = ({ canAnimate }) => {
   }, [canAnimate]);
 
   return (
-    <>
-      <div ref={sentinelRef} style={{ height: 1, width: "100%" }} />
-
+    <div className="contact-section-container" ref={sentinelRef} style={{ position: "relative" }}>
       <motion.div
         className="contact-arrow-fixed"
         initial={{ opacity: 0, y: 40 }}
@@ -50,7 +48,7 @@ const ContactArrow = ({ canAnimate }) => {
           Developed by Julio Bandeira
         </a>
       </motion.div>
-    </>
+    </div>
   );
 };
 

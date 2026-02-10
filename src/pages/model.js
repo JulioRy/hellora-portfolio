@@ -4,6 +4,7 @@ import ScrollForMore from "../components/scrollForMore";
 import CardFan from "../components/cardFan";
 import PortfolioTitle from "../components/portfolioTitle";
 import ContactArrow from "../components/contactArrow";
+import ShowcaseSection from "../components/showcaseSection";
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
@@ -47,7 +48,7 @@ const letter = {
   },
 };
 
-const Model = ({ imageDetails }) => {
+const Model = ({ imageDetails, onShowcaseReached }) => {
   const isMobile = window.innerWidth <= 768;
   const { scrollYProgress } = useViewportScroll();
   
@@ -191,10 +192,14 @@ const Model = ({ imageDetails }) => {
           <PortfolioTitle canAnimate={canScroll} />
         </div>
         <CardFan images={portfolioImages} canAnimate={canScroll} />
-        <ContactArrow canAnimate={canScroll} />
       </div>
 
-      <div style={{ height: "9vh" }} />
+      <ShowcaseSection 
+        canAnimate={canScroll} 
+        onSunFinished={onShowcaseReached} 
+      />
+
+      <ContactArrow canAnimate={canScroll} />
     </motion.div>
   );
 };
