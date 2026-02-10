@@ -1,5 +1,3 @@
-Aqui está o conteúdo formatado em Markdown para você copiar e colar diretamente no seu arquivo README.md. Ele termina exatamente na seção de execução, conforme você pediu.
-
 A Portfolio with framer motion for my beautiful and precious girlfriend
 Este é um portfólio de alta performance desenvolvido para Hellora Danna, focado em estratégia visual e direção de arte. O projeto utiliza animações fluidas e complexas para refletir a criatividade e o impacto do trabalho dela, transformando a navegação em uma experiência imersiva.
 
