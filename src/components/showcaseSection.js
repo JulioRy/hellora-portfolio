@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./whatsappButton";
+import RedThread from "./redThread";
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
@@ -103,6 +104,7 @@ const ShowcaseSection = ({ canAnimate, onSunFinished }) => {
               transition={{ ...transition, delay: 1.0 }}
             >
               Criatividade que <br /> conecta marcas <br /> a pessoas.
+              <RedThread isVisible={isVisible} delay={2.4} />
             </motion.h2>
             <motion.p
               initial={{ y: 60, opacity: 0 }}

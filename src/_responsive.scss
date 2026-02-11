@@ -246,6 +246,13 @@ header {
 
       h2 {
         font-size: 26px !important;
+
+        .thread-connector {
+          width: 128px;
+          height: 29px;
+          left: 68px;
+          top: 4%;
+        }
       }
 
       p {
@@ -282,6 +289,13 @@ header {
 
     .showcase-text h2 {
       font-size: 22px !important;
+
+      .thread-connector {
+        width: 116px;
+        height: 24px;
+        left: 53px;
+        top: 0%;
+      }
     }
 
     .showcase-media {

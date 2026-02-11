@@ -462,9 +462,6 @@ main {
 // SHOWCASE SECTION
 // ========================
 
-$main: #d4d4d0;
-$black: #1e1f13;
-
 .showcase-section {
   position: relative;
   height: 100vh;
@@ -474,7 +471,6 @@ $black: #1e1f13;
   overflow: hidden;
   padding: 0;
 
-  // Sun positioned at bottom-center
   .showcase-bg-logo {
     position: absolute;
     bottom: -20%;
@@ -513,11 +509,29 @@ $black: #1e1f13;
     max-width: 480px;
 
     h2 {
+      position: relative;
       font-size: 36px;
       font-weight: 400;
       line-height: 1.2;
       margin: 0 0 28px 0;
       font-family: "Maragsa", "Anton", sans-serif;
+
+      .thread-connector {
+        position: absolute;
+        width: 180px;
+        height: 40px;
+        left: 90px;
+        top: 3%;
+        pointer-events: none;
+
+        img {
+          position: absolute;
+          width: 105%;
+          height: auto;
+          top: 0;
+          left: 0;
+        }
+      }
     }
 
     p {
@@ -544,10 +558,6 @@ $black: #1e1f13;
       gap: 40px;
     }
   }
-
-  // =============================================
-  // CARD SIZING
-  // =============================================
 
   .showcase-media-main {
     width: 340px;
@@ -594,9 +604,16 @@ $black: #1e1f13;
     }
   }
 
-  @media (max-width: 1440px) {
+@media (max-width: 1440px) {
     .showcase-text h2 {
       font-size: 30px;
+
+      .thread-connector {
+        width: 155px;
+        height: 33px;
+        left: 74px;
+        top: 0%;
+      }
     }
 
     .showcase-media-main {
