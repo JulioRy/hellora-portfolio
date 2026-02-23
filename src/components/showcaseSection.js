@@ -98,14 +98,20 @@ const ShowcaseSection = ({ canAnimate, onSunFinished }) => {
       <div className="showcase-content container">
         <div className="showcase-layout">
           <div className="showcase-text">
+            {/* Title with red thread overlay */}
+            <div className="showcase-title-wrapper">
             <motion.h2
               initial={{ y: 80, opacity: 0 }}
               animate={isVisible ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
               transition={{ ...transition, delay: 1.0 }}
             >
-              Criatividade que <br /> conecta marcas <br /> a pessoas.
-              <RedThread isVisible={isVisible} delay={2.4} />
+              Criatividade que <br />
+              <span style={{ color: "#c41e1e" }}>conecta</span> marcas <br />
+              a pessoas.
             </motion.h2>
+              <RedThread isVisible={isVisible} delay={2.2} />
+            </div>
+
             <motion.p
               initial={{ y: 60, opacity: 0 }}
               animate={isVisible ? { y: 0, opacity: 1 } : { y: 60, opacity: 0 }}
