@@ -98,14 +98,14 @@ const ShowcaseSection = ({ canAnimate, onSunFinished }) => {
       <div className="showcase-content container">
         <div className="showcase-layout">
           <div className="showcase-text">
-            <motion.h2
-              initial={{ y: 80, opacity: 0 }}
-              animate={isVisible ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
-              transition={{ ...transition, delay: 1.0 }}
-            >
-              Criatividade que <br /> conecta marcas <br /> a pessoas.
-              <RedThread isVisible={isVisible} delay={2.4} />
-            </motion.h2>
+          <motion.h2
+            initial={{ y: 80, opacity: 0 }}
+            animate={isVisible ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
+            transition={{ ...transition, delay: 1.0 }}
+          >
+            Criatividade que <br /> <span style={{ color: "rgb(196, 30, 30)" }}>conecta</span> marcas <br /> a pessoas.
+            <RedThread isVisible={isVisible} delay={2.4} />
+          </motion.h2>
             <motion.p
               initial={{ y: 60, opacity: 0 }}
               animate={isVisible ? { y: 0, opacity: 1 } : { y: 60, opacity: 0 }}
